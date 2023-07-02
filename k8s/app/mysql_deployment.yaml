@@ -2,6 +2,9 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql
+  namespace: test
+  labels:
+    app: library
 spec:
   strategy:
     type: Recreate

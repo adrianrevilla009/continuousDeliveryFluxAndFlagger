@@ -2,7 +2,7 @@ apiVersion: flagger.app/v1beta1
 kind: Canary
 metadata:
   name: library
-  namespace: zero
+  namespace: test
 spec:
   # deployment reference
   targetRef:
@@ -35,7 +35,7 @@ spec:
       retryOn: "gateway-error,connect-failure,refused-stream"
   analysis:
     # schedule interval (default 60s)
-    interval: 1m
+    interval: 30s
     # max number of failed metric checks before rollback
     threshold: 5
     # max traffic percentage routed to canary

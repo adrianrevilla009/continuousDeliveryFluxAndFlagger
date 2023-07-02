@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: library
+  namespace: test
   labels:
     app: library
 spec:
@@ -19,7 +20,7 @@ spec:
       restartPolicy: Always
       containers:
         - name: library
-          image: docker.io/adrian2606/library:v1
+          image: docker.io/adrian2606/library:v2
           resources:
             requests:
               cpu: "100m"
